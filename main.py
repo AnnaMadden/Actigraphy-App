@@ -16,18 +16,19 @@ import json
 import nibabel as nib
 import dipy
 
-from dipy.align.reslice import reslice
+#from dipy.align.reslice import reslice
 from dipy.data import get_fnames
 
 # load inputs from config.json
-with open('config.json') as config_json:
+with open('config.json.actigraphy') as config_json:
 	config = json.load(config_json)
+	###does anything else need to be edited here????
 
 # Load into variables predefined code inputs
-data_file = str(config['t1'])
+data_file = str(config['.xlxs'])
  
 # set the output resolution
-#out_res = [ int(v) for v in config['outres'].split(" ")]
+out_res = [ int(v) for v in config['outres'].split(" ")]
 
 # we load the input T1w that we would like to resample
 #img = nib.load(data_file)
